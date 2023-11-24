@@ -57,6 +57,7 @@ outputs:
         - requests
         - nbformat
         - ipykernel
+        - watchfiles
       run_constrained:
         # Can't use {{ pin_subpackage("solara-assets", exact=True) }}
         # as the hashes are different
