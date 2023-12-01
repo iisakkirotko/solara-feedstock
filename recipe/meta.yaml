@@ -1,4 +1,4 @@
-{% set version = "1.24.0" %}
+{% set version = "1.25.0" %}
 {% set build = 0 %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: daab9c1928c5a1cbf7dc8e91b3cb40b44421f30e83f219a91837a9f631ab055a
+    sha256: 69cd9d12fef6ac6a65211328feb62a33bc18b23d2fa0b4a83885cf7a577faf5e
     folder: solara
   - url: https://pypi.io/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: 6738a0324d63df51a484ee93e702b8b861bc812819ce805a2449f21ed969e9f6
+    sha256: 0f66eecebf3d206c363c49df03c59472c0ede6565c6fb78a1762fc74a2067ae2
     folder: solara_assets
 
 build:
