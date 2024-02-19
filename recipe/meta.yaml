@@ -1,4 +1,4 @@
-{% set version = "1.25.0" %}
+{% set version = "1.26.1" %}
 {% set build = 0 %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: 69cd9d12fef6ac6a65211328feb62a33bc18b23d2fa0b4a83885cf7a577faf5e
+    sha256: 97f6648aa2f1ecabce473a5dc89dcd592d53b984a30ecc58dfdee1f216b32db1
     folder: solara
   - url: https://pypi.io/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: 0f66eecebf3d206c363c49df03c59472c0ede6565c6fb78a1762fc74a2067ae2
+    sha256: 404356d24f1e465cc69cac40b03bc337dcb7b50434124ae5d570efac8ae82cfa
     folder: solara_assets
 
 build:
@@ -116,11 +116,7 @@ about:
   license: MIT AND BSD-3-Clause
   license_file:
     - solara/LICENSE
-    - solara/packages/assets/LICENSE
-    - solara/packages/solara-widget-manager/LICENSE.voila.txt
-    - solara/packages/solara-enterprise/LICENSE
-    - solara/packages/solara-enterprise/solara_enterprise/license.py
-    - solara/solara/template/portal/LICENSE
+#    - solara/packages/solara-widget-manager/LICENSE.voila.txt
 
 
 extra:
