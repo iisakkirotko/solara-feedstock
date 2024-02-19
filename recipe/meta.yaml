@@ -116,11 +116,7 @@ about:
   license: MIT AND BSD-3-Clause
   license_file:
     - solara/LICENSE
-    - solara/packages/assets/LICENSE
-    - solara/packages/solara-widget-manager/LICENSE.voila.txt
-    - solara/packages/solara-enterprise/LICENSE
-    - solara/packages/solara-enterprise/solara_enterprise/license.py
-    - solara/solara/template/portal/LICENSE
+#    - solara/packages/solara-widget-manager/LICENSE.voila.txt
 
 
 extra:
