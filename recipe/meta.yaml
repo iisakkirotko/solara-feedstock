@@ -1,4 +1,4 @@
-{% set version = "1.27.0" %}
+{% set version = "1.28.0" %}
 {% set build = 0 %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: a44641b2ba88ee6e9b20f6158f551301e665fd6e42e06169290aed4e3710610a
+    sha256: c4a9419ff316e83b4dccb9758de7611c47973fbc212bd499c38ff78dbbad8a7d
     folder: solara
   - url: https://pypi.io/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: aae3ce55efa8fcd767c12c8f02cc565185e6e22510ee5909e2a61b3f81eb3ca5
+    sha256: 0a88f885a8149788e901c59d5c2a10cc97f0516eaabd74d0cb96db9ea095572f
     folder: solara_assets
 
 build:
@@ -103,7 +103,7 @@ outputs:
         - solara_assets/cdn/@widgetti/vue-grid-layout@2.3.13-alpha.2/LICENSE
         - solara_assets/cdn/vega-lite@5.2.0/LICENSE
         - solara_assets/cdn/vega@5.21.0/LICENSE
-        - solara_assets/cdn/mermaid@8.6.4/LICENSE
+        - solara_assets/cdn/mermaid@10.8.0/LICENSE
         - solara_assets/cdn/echarts@5.4.0/LICENSE
         - solara_assets/cdn/echarts@5.4.0/NOTICE
         - solara_assets/cdn/echarts@5.4.0/licenses/LICENSE-d3
