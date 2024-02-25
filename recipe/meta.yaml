@@ -103,7 +103,7 @@ outputs:
         - solara_assets/cdn/@widgetti/vue-grid-layout@2.3.13-alpha.2/LICENSE
         - solara_assets/cdn/vega-lite@5.2.0/LICENSE
         - solara_assets/cdn/vega@5.21.0/LICENSE
-        - solara_assets/cdn/mermaid@8.6.4/LICENSE
+        - solara_assets/cdn/mermaid@10.8.0/LICENSE
         - solara_assets/cdn/echarts@5.4.0/LICENSE
         - solara_assets/cdn/echarts@5.4.0/NOTICE
         - solara_assets/cdn/echarts@5.4.0/licenses/LICENSE-d3
