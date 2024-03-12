@@ -156,6 +156,7 @@ Feedstock Maintainers
 =====================
 
 * [@dhirschfeld](https://github.com/dhirschfeld/)
+* [@iisakkirotko](https://github.com/iisakkirotko/)
 * [@maartenbreddels](https://github.com/maartenbreddels/)
 * [@mariobuikhuizen](https://github.com/mariobuikhuizen/)
 
