@@ -161,8 +161,10 @@ outputs:
     test:
       imports:
         - solara_assets
-      commands:
-        - pip check
+      # pip check fails, see https://github.com/conda-forge/solara-feedstock/pull/24#issuecomment-2072211293
+      # And https://github.com/pypa/pip/pull/11159
+      # commands:
+      #   - pip check
       requires:
         - pip
     about:
