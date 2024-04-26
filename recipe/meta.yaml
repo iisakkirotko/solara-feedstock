@@ -1,5 +1,5 @@
-{% set version = "1.30.1" %}
-{% set build = 1 %}
+{% set version = "1.31.0" %}
+{% set build = 0 %}
 
 package:
   name: solara
@@ -7,10 +7,16 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: 86ca619ce2e5209ebe0bda9f6f13036eac045dfea2a5f11def336f51e93d136f
+    sha256: af8b4a9cdf70cfd9b3a35314d3dfe0c5b81f3194a68587f390edf75f26d9dd96
     folder: solara
+  - url: https://pypi.io/packages/source/s/solara-ui/solara_ui-{{ version }}.tar.gz
+    sha256: 1dfa2fbd0936652962846a3cd6e71cc3bf799e05806aa0765ffc17b61170e8e5
+    folder: solara_ui
+  - url: https://pypi.io/packages/source/s/solara-server/solara_server-{{ version }}.tar.gz
+    sha256: 9bb815a2214f50e5c3ce9e9783f285bcfcec817d262d9087157a819b3fea7100
+    folder: solara_server
   - url: https://pypi.io/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: 2aa3b6c9fae3a9843be06820f4d5cbe78bd681f5173a70dcb2d0872abbc5735a
+    sha256: 26abc7fa3e1836edb925c186af89dd444fde407cce2459a5a9efc545432a0384
     folder: solara_assets
 
 build:
@@ -27,8 +33,6 @@ outputs:
         set -euxo pipefail
         cd solara
         python -m pip install -vv --no-deps .
-      entry_points:
-        - solara = solara.__main__:main
     requirements:
       host:
         - python >=3.8
@@ -36,28 +40,93 @@ outputs:
         - pip
       run:
         - python >=3.8
+        - solara-ui
+        - solara-server
+      run_constrained:
+        # Can't use {{ pin_subpackage("solara-assets", exact=True) }}
+        # as the hashes are different
+        # TODO: revisit after https://github.com/conda-forge/staged-recipes/issues/23382
+        - solara-assets ={{ version }}=*_{{ build }}
+        - solara-server ={{ version }}=*_{{ build }}
+        - solara-ui ={{ version }}=*_{{ build }}
+
+    test:
+      imports:
+        - solara
+      commands:
+        - pip check
+        - solara --help
+      requires:
+        - pip
+
+  - name: solara-ui
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        set -euxo pipefail
+        cd solara_ui
+        python -m pip install -vv --no-deps .
+    requirements:
+      host:
+        - python >=3.8
+        - hatchling >=0.25
+        - pip
+      run:
+        - python >=3.8
         - reacton >=1.7.1
-        - ipywidgets
-        - cachetools
-        - filelock
+        - ipywidgets >=7.7
+        - ipyvuetify >=1.6.10
+        - ipyvue >=1.9.0
+        - requests
+        - humanize
+        # solara-ui optional dependencies follow
         - markdown
         - pymdown-extensions
-        - humanize
-        - ipyvuetify >=1.8.10
-        - ipyvue >=1.9.0
+        - pygments
+        - cachetools
+        - numpy
+        - pillow
+
+    test:
+      imports:
+        - solara
+      commands:
+        - pip check
+      requires:
+        - pip
+
+  - name: solara-server
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        set -euxo pipefail
+        cd solara_server
+        python -m pip install -vv --no-deps .
+      entry_points:
+        - solara = solara.__main__:main
+    requirements:
+      host:
+        - python
+        - hatchling >=0.25
+        - pip
+      run:
+        - python
         - jinja2
-        - markupsafe
         - click >=7.1.0
         - rich-click
+        - filelock
+        - ipykernel
+        - nbformat
+        - jupyter_client >=7.0.0
+        - solara-ui
+        # solara-server optional dependencies follow
         - uvicorn
         - websockets
         - starlette
-        - jupyter_client >=7.0.0
-        - watchdog
-        - requests
-        - nbformat
-        - ipykernel
         - watchfiles
+        - watchdog
       run_constrained:
         # Can't use {{ pin_subpackage("solara-assets", exact=True) }}
         # as the hashes are different
@@ -88,11 +157,14 @@ outputs:
       run:
         - python
         - solara
+
     test:
       imports:
         - solara_assets
-      commands:
-        - pip check
+      # pip check fails, see https://github.com/conda-forge/solara-feedstock/pull/24#issuecomment-2072211293
+      # And https://github.com/pypa/pip/pull/11159
+      # commands:
+      #   - pip check
       requires:
         - pip
     about:

@@ -40,6 +40,8 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-solara-green.svg)](https://anaconda.org/conda-forge/solara) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/solara.svg)](https://anaconda.org/conda-forge/solara) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/solara.svg)](https://anaconda.org/conda-forge/solara) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/solara.svg)](https://anaconda.org/conda-forge/solara) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-solara--assets-green.svg)](https://anaconda.org/conda-forge/solara-assets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/solara-assets.svg)](https://anaconda.org/conda-forge/solara-assets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/solara-assets.svg)](https://anaconda.org/conda-forge/solara-assets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/solara-assets.svg)](https://anaconda.org/conda-forge/solara-assets) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-solara--server-green.svg)](https://anaconda.org/conda-forge/solara-server) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/solara-server.svg)](https://anaconda.org/conda-forge/solara-server) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/solara-server.svg)](https://anaconda.org/conda-forge/solara-server) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/solara-server.svg)](https://anaconda.org/conda-forge/solara-server) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-solara--ui-green.svg)](https://anaconda.org/conda-forge/solara-ui) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/solara-ui.svg)](https://anaconda.org/conda-forge/solara-ui) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/solara-ui.svg)](https://anaconda.org/conda-forge/solara-ui) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/solara-ui.svg)](https://anaconda.org/conda-forge/solara-ui) |
 
 Installing solara
 =================
@@ -51,16 +53,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `solara, solara-assets` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `solara, solara-assets, solara-server, solara-ui` can be installed with `conda`:
 
 ```
-conda install solara solara-assets
+conda install solara solara-assets solara-server solara-ui
 ```
 
 or with `mamba`:
 
 ```
-mamba install solara solara-assets
+mamba install solara solara-assets solara-server solara-ui
 ```
 
 It is possible to list all of the versions of `solara` available on your platform with `conda`:
