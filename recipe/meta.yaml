@@ -2,7 +2,7 @@
 {% set build = 0 %}
 
 package:
-  name: solara
+  name: solara-suite
   version: {{ version }}
 
 source:
@@ -192,6 +192,7 @@ about:
 
 
 extra:
+  feedstock-name: solara
   recipe-maintainers:
     - maartenbreddels
     - mariobuikhuizen
